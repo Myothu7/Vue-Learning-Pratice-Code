@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Learning</title>
+    <style>
+      .text-danger {
+        color: red;
+      }
+      .btn {
+        border: none;
+        padding: 4px 8px;
+        border-radius: 2px;
+        color: white;
+      }
+      .btn-primary {
+        background-color: blue;
+      }
+      .format {
+        margin-top: 15px;
+        width: 250px;
+        height: 130px;
+        object-fit: cover;
+        border-radius: 3px;
+      }
+
+      .d-block {
+        display: block;
+      }
+
+      .form-control {
+        width: 250px;
+      }
+      .mt {
+        margin-top: 5px;
+      }
+      .me {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <h2>Hello Vue</h2> -->
+      <input type="text" v-model="name" name="name" :class="[block, control]" />
+      <input
+        type="submit"
+        v-model="submit"
+        :class="[button_color, button, mTop, block, float_right]"
+      />
+      <img v-bind:src="img_link" alt="" :class="[img_format, mTop]" />
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script>
+    const myo = new Vue({
+      el: "#app",
+      data: {
+        name: "Myo Min Thu",
+        submit: "Ok",
+        button: "btn",
+        button_color: "btn-primary",
+        img_link:
+          "https://buffer.com/library/content/images/2023/10/free-images.jpg",
+        control: "form-control",
+        block: "d-block",
+        mTop: "mt",
+        img_format: "format",
+        float_right: "me",
+        msg: "success",
+      },
+    });
+  </script>
+</html>

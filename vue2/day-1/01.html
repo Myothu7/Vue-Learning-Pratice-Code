@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test">
+      <details>
+        <summary>{{ information.name }}</summary>
+        <ul>
+          <li>{{ information.email }}</li>
+          <li>{{ information.address }}</li>
+          <li>{{ information.role == 1? 'Admin' : 'User' }}</li>
+        </ul>
+      </details>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#test",
+      data: {
+        information: {
+          name: "Myo Min Thu",
+          email: "mmt@gmail.com",
+          address: "Kyeemyintine",
+          role: 1,
+        },
+      },
+    });
+  </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .text-justify {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <details>
+        <summary>{{ name }}</summary>
+        <ul>
+          <li v-if="status==1">{{ gender.m }}</li>
+          <li v-else-if="status== 2">{{ gender.f }}</li>
+          <li v-else>{{ gender.oth }}</li>
+        </ul>
+      </details>
+      <span v-show="status" :class="text">{{ msg }}</span>
+    </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: "#app",
+      data: {
+        gender: {
+          m: "Male",
+          f: "Female",
+          oth: "Other",
+        },
+        name: "Myo Min Thu",
+        status: 1,
+        msg: "see you at the top",
+        text: "text-justify",
+      },
+    });
+  </script>
+</html>
